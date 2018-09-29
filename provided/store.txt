@@ -1,0 +1,6 @@
+My Store
+
+Inventory:
+Tea,2.000000,7
+Tall Candle,7.000000,3
+Kettle,15.000000,2

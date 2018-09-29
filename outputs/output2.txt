@@ -1,0 +1,226 @@
+☁  hw3_shopping  ./shop store.txt
+Welcome to My Store
+0: Display inventory
+1: Add item to cart
+2: Remove item from cart
+3: Checkout
+4: Leave
+0
+
+Store inventory
+Tea: 2.00 - 4
+Tall Candle: 7.00 - 4
+Kettle: 15.00 - 2
+
+0: Display inventory
+1: Add item to cart
+2: Remove item from cart
+3: Checkout
+4: Leave
+1
+
+Adding item to cart
+0: Back to main menu
+1: Tea: 2.00 - 4
+2: Tall Candle: 7.00 - 4
+3: Kettle: 15.00 - 2
+1
+
+Cart:
+Tea: 2.00 - 1
+
+Inventory:
+Tea: 2.00 - 3
+Tall Candle: 7.00 - 4
+Kettle: 15.00 - 2
+
+0: Display inventory
+1: Add item to cart
+2: Remove item from cart
+3: Checkout
+4: Leave
+2
+
+Removing item from cart
+0: Back to main menu
+1: Tea: 2.00 - 1
+1
+
+Cart:
+
+Inventory:
+Tea: 2.00 - 4
+Tall Candle: 7.00 - 4
+Kettle: 15.00 - 2
+
+0: Display inventory
+1: Add item to cart
+2: Remove item from cart
+3: Checkout
+4: Leave
+2
+
+There are no items in your cart.
+0: Display inventory
+1: Add item to cart
+2: Remove item from cart
+3: Checkout
+4: Leave
+1
+
+Adding item to cart
+0: Back to main menu
+1: Tea: 2.00 - 4
+2: Tall Candle: 7.00 - 4
+3: Kettle: 15.00 - 2
+1
+
+Cart:
+Tea: 2.00 - 1
+
+Inventory:
+Tea: 2.00 - 3
+Tall Candle: 7.00 - 4
+Kettle: 15.00 - 2
+
+0: Display inventory
+1: Add item to cart
+2: Remove item from cart
+3: Checkout
+4: Leave
+1
+
+Adding item to cart
+0: Back to main menu
+1: Tea: 2.00 - 3
+2: Tall Candle: 7.00 - 4
+3: Kettle: 15.00 - 2
+1
+
+Cart:
+Tea: 2.00 - 2
+
+Inventory:
+Tea: 2.00 - 2
+Tall Candle: 7.00 - 4
+Kettle: 15.00 - 2
+
+0: Display inventory
+1: Add item to cart
+2: Remove item from cart
+3: Checkout
+4: Leave
+1
+
+Adding item to cart
+0: Back to main menu
+1: Tea: 2.00 - 2
+2: Tall Candle: 7.00 - 4
+3: Kettle: 15.00 - 2
+1
+
+Cart:
+Tea: 2.00 - 3
+
+Inventory:
+Tea: 2.00 - 1
+Tall Candle: 7.00 - 4
+Kettle: 15.00 - 2
+
+0: Display inventory
+1: Add item to cart
+2: Remove item from cart
+3: Checkout
+4: Leave
+1
+
+Adding item to cart
+0: Back to main menu
+1: Tea: 2.00 - 1
+2: Tall Candle: 7.00 - 4
+3: Kettle: 15.00 - 2
+1
+
+Cart:
+Tea: 2.00 - 4
+
+Inventory:
+Tea: 2.00 - 0
+Tall Candle: 7.00 - 4
+Kettle: 15.00 - 2
+
+0: Display inventory
+1: Add item to cart
+2: Remove item from cart
+3: Checkout
+4: Leave
+0
+
+Store inventory
+Tea: 2.00 - 0
+Tall Candle: 7.00 - 4
+Kettle: 15.00 - 2
+
+0: Display inventory
+1: Add item to cart
+2: Remove item from cart
+3: Checkout
+4: Leave
+1
+
+Adding item to cart
+0: Back to main menu
+2: Tall Candle: 7.00 - 4
+3: Kettle: 15.00 - 2
+0
+
+0: Display inventory
+1: Add item to cart
+2: Remove item from cart
+3: Checkout
+4: Leave
+3
+
+Your total is: 8.71
+0: Display inventory
+1: Add item to cart
+2: Remove item from cart
+3: Checkout
+4: Leave
+0
+
+Store inventory
+Tea: 2.00 - 0
+Tall Candle: 7.00 - 4
+Kettle: 15.00 - 2
+
+0: Display inventory
+1: Add item to cart
+2: Remove item from cart
+3: Checkout
+4: Leave
+4
+
+Goodbye! The items in your cart have been returned to the store.
+☁  hw3_shopping  ./shop store.txt
+Welcome to My Store
+0: Display inventory
+1: Add item to cart
+2: Remove item from cart
+3: Checkout
+4: Leave
+0
+
+Store inventory
+Tea: 2.00 - 0
+Tall Candle: 7.00 - 4
+Kettle: 15.00 - 2
+
+0: Display inventory
+1: Add item to cart
+2: Remove item from cart
+3: Checkout
+4: Leave
+4
+
+Goodbye! The items in your cart have been returned to the store.
