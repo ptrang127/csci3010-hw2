@@ -26,7 +26,7 @@ TEST_CASE: Adding an item
 	SECTION: Adding an item to a cart where there are items
 TEST_CASE: Removing an item
 	SECTION: Removing an item from an empty cart
-	SECTION: Removing an item from a cart that isn’t empty
+	SECTION: Removing an item from a cart that isn't empty
 TEST_CASE: Displaying the contents of the cart
 	SECTION: Displaying the cart with items in it
 	SECTION: Displaying an empty cart

@@ -17,3 +17,6 @@ Store.o: Store.cpp
 
 Item.o: Item.cpp
 	$(CXX) $(CXXFLAGS) -c Item.cpp
+
+test: Store.o TextUI.o Item.o test.cpp
+	$(CXX) $(CXXFLAGS) test.cpp Store.o TextUI.o Item.o -o test
