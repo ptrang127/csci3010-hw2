@@ -1,0 +1,53 @@
+STORE:
+TEST_CASE: Creating the store
+TEST_CASE: Displaying the inventory
+	SECTION: Displaying when there are items
+	SECTION: Displaying when there are no items
+TEST_CASE: Adding an item to cart
+	SECTION: Adding to an empty cart
+	SECTION: Adding to a cart with items already
+	SECTION: Adding when there are no items left to add
+TEST_CASE: Remove an item from the cart
+	SECTION: Removing an item from an empty cart
+	SECTION: Removing an item from a cart that has items
+TEST_CASE: Displaying the contents of the cart
+	SECTION: Displaying an empty cart
+	SECTION: Displaying a cart with items
+TEST_CASE: Checking out a cart
+	SECTION: Checking out a cart with items
+	SECTION: Checking out a cart with no items
+TEST_CASE: Clearing a cart
+	SECTION: Clearing a cart with items
+	SECTION: Clearing a cart with no items
+
+SHOPPINGCART:
+TEST_CASE: Adding an item
+	SECTION: Adding an item to an empty cart
+	SECTION: Adding an item to a cart where there are items
+TEST_CASE: Removing an item
+	SECTION: Removing an item from an empty cart
+	SECTION: Removing an item from a cart that isn’t empty
+TEST_CASE: Displaying the contents of the cart
+	SECTION: Displaying the cart with items in it
+	SECTION: Displaying an empty cart
+TEST_CASE: Clearing the cart
+	SECTION: Clearing a cart with items in it
+	SECTION: Clearing an empty cart
+TEST_CASE: Getting the items from the cart
+	SECTION: Getting the items from a cart with items
+	SECTION: Getting items from an empty cart
+
+ITEM
+TEST_CASE: Constructing a class
+	SECTION: Checking if the id is correctly stored
+	SECTION: Checking if the quantity is correctly stored
+	SECTION: Checking if the cost is correctly stored
+	SECTION: Checking if the type is correctly stored
+	SECTION: Ensuring all private variables are populated
+TEST_CASE: Increasing or decreasing a quantity
+	SECTION: Increasing a quantity of an item
+	SECTION: Decreasing a quantity of an item
+TEST_CASE: Testing the stringify
+TEST_CASE: Cloning
+	SECTION: Checking if the clone has the same private variables
+
