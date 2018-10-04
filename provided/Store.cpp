@@ -12,6 +12,11 @@
   Provided code for CSCI 3010, HW 2, Fall 2018
 */
 
+/**
+	Returns a string with the items in the cart
+    @param none
+    @return string of cart contents
+*/
 std::string ShoppingCart::DisplayCart() {
   std::string inv = "";
   for (Item * i : in_cart_) {
@@ -21,6 +26,11 @@ std::string ShoppingCart::DisplayCart() {
   return inv;
 }
 
+/**
+	Removes an item from the cart
+    @param pointer to an item
+    @return nothing
+*/
 void ShoppingCart::RemoveItem(Item * to_remove) {
   if (to_remove->get_quantity() > 1) {
     to_remove->DecreaseQuantity(1);
@@ -38,6 +48,11 @@ void ShoppingCart::RemoveItem(Item * to_remove) {
   }
 }
 
+/**
+	Adds an item to the cart
+    @param pointer to an item
+    @return nothing
+*/
 void ShoppingCart::AddItem(Item * to_add) {
   bool added = false;
   for (int i = 0; i < in_cart_.size(); i++) {
@@ -52,7 +67,11 @@ void ShoppingCart::AddItem(Item * to_add) {
   }
 }
 
-
+/**
+	Store contructor to initialize all private variables
+    @param A filename string
+    @return nothing
+*/
 Store::Store(std::string filename) {
   filename_ = filename;
 
@@ -92,6 +111,11 @@ Store::Store(std::string filename) {
   cart_ = new ShoppingCart();
 }
 
+/**
+	Create a map from int to items in inventory
+    @param Nothing
+    @return A map from in to items in inventory
+*/
 std::map<int, std::string> Store::Items() {
   std::map<int, std::string> items;
   for (Item * i : inventory_) {
@@ -104,6 +128,11 @@ std::map<int, std::string> Store::Items() {
   return items;
 }
 
+/**
+	Create a map from int to items in cart
+    @param Nothing
+    @return A map from in to items in cart
+*/
 std::map<int, std::string> Store::CartItems() {
   std::map<int, std::string> items;
   for (Item * i : cart_->get_items()) {
@@ -116,6 +145,11 @@ std::map<int, std::string> Store::CartItems() {
   return items;
 }
 
+/**
+	Add an item to cart
+    @param int ID number of an item
+    @return nothing
+*/
 void Store::AddItemToCart(int item_id) {
   Item * target;
   for (Item * i : inventory_) {
@@ -128,6 +162,11 @@ void Store::AddItemToCart(int item_id) {
   cart_->AddItem(target);
 }
 
+/**
+	Remove an item from cart
+    @param int ID number of an item
+    @return nothing
+*/
 void Store::RemoveItemFromCart(int item_id) {
   Item * target;
   for (Item * i : cart_->get_items()) {
@@ -144,11 +183,21 @@ void Store::RemoveItemFromCart(int item_id) {
   }
 }
 
+/**
+	Create a string with all the items in the cart
+    @param Nothing
+    @return A string showing items in the cart
+*/
 std::string Store::DisplayCart() {
   return cart_->DisplayCart();
 }
 
 
+/**
+	Create a string with all the items in inventory
+    @param Nothing
+    @return A string showing items in inventory
+*/
 std::string Store::DisplayInventory() {
   std::string inv = "";
   for (Item * i : inventory_) {
@@ -158,6 +207,11 @@ std::string Store::DisplayInventory() {
   return inv;
 }
 
+/**
+	Get the total cost of the items in cart and update inventory
+    @param Nothing
+    @return A double representing the total cost of items that were in cart
+*/
 double Store::Checkout() {
   
   double total = 0.0;
@@ -183,6 +237,11 @@ double Store::Checkout() {
   return total;
 }
 
+/**
+	Remove all items from cart
+    @param Nothing
+    @return Nothing
+*/
 void Store::ClearCart() {
   cart_->ClearCart();
 }
