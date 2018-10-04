@@ -19,14 +19,23 @@ public:
   int get_id() { return id_; };
 
   int get_quantity() { return quantity_; };
-
-  int get_cost() { return cost_; };
+  
+  //change int to double because cost_is a double
+  double get_cost() { return cost_; };
 
   std::string get_type() { return type_; };
 
   void IncreaseQuantity(int amount) { quantity_ += amount; };
 
-  void DecreaseQuantity(int amount) { quantity_ -= amount; };
+  //Quantity cannot go to a negative number
+  void DecreaseQuantity(int amount) { 
+	  if(quantity_ - amount <= 0){
+		  quantity_ = 0;
+	  }
+	  else{
+		  quantity_ -= amount; 
+	  }
+  };
 
   std::string ToString() const;
 

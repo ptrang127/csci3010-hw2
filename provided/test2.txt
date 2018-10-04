@@ -1,0 +1,6 @@
+Test Store
+
+Inventory:
+Table,20.000000,20
+Desk,10.000000,30
+Chair,30.000000,15

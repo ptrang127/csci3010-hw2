@@ -1,0 +1,6 @@
+Test Store
+
+Inventory:
+Paper,2.000000,20
+Pencil,1.000000,30
+Notebook,3.000000,15
