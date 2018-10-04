@@ -12,7 +12,7 @@ A program that lets a user electronically shop at a store
 
 int main(int argc, char *argv[]) {
 
-	if(argc == 2) { //CHeck if store file was provided
+	if(argc == 2) { //Check if store file was provided
 		TextUI menu;
 		Store store(argv[1]); //getting store file
 		std::string choice;
@@ -20,7 +20,7 @@ int main(int argc, char *argv[]) {
 			choice = menu.MainMenu(); //get input
 			menu.RouteChoice(store, choice);  //Routing store given the user choice
 		}
-		return 0;		
+		return 0;
 	} else {
 		return 0;
 	}

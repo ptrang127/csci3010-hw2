@@ -6,6 +6,7 @@
 #include "TextUI.h"
 
 TEST_CASE("Adding an item", "[AddItem]") {
+
 	ShoppingCart cart;
 	Item item1(0, "item1", 2.00, 1); //item used in test1 and test2
 	Item item2(1, "item2", 3.00, 1); //item used in test2
@@ -40,6 +41,7 @@ TEST_CASE("Adding an item", "[AddItem]") {
 }
 
 TEST_CASE("Removing an item", "[RemoveItem]") {
+
 	ShoppingCart cart;
 	Item item1(0, "item1", 2.00, 1);
 	Item item2(1, "item2", 3.00, 1);
@@ -93,6 +95,7 @@ TEST_CASE("Removing an item", "[RemoveItem]") {
 
 
 TEST_CASE("Displaying the contents of the cart", "[DisplayCart]") {
+
 	ShoppingCart cart;
 	Item item1(0, "item1", 2.000, 1);
 	Item item2(1, "item2", 3.000, 1);
@@ -112,11 +115,10 @@ TEST_CASE("Displaying the contents of the cart", "[DisplayCart]") {
         str.append(test[1]->get_type()+": "+s+" - "+std::to_string(test[1]->get_quantity())+"\n"); //get get item2 and added to what we had
         REQUIRE(cart.DisplayCart() == str); //Check if DisplayCart() returns te correct string
     }
-    SECTION("Displaying an empty cart") {
-    }
 }
 
 TEST_CASE("Clearing the cart", "[ClearCart]") {
+
 	ShoppingCart cart;
 	Item item1(0, "item1", 2.000, 1);
 	Item item2(1, "item2", 3.000, 1);
@@ -140,6 +142,7 @@ TEST_CASE("Clearing the cart", "[ClearCart]") {
 }
 
 TEST_CASE("Getting the items from the cart", "[GetItems]") {
+
 	ShoppingCart cart;
 	Item item1(0, "item1", 2.000, 1);
 	Item item2(1, "item2", 3.000, 1);
@@ -175,6 +178,7 @@ TEST_CASE("Constructing an item object", "[Item]") {
 }
 
 TEST_CASE("Increasing or decreasing a quantity", "[Increasing/Decreasing]") {
+
 	Item item1(0, "item1", 2.000, 10);
 	Item item2(1, "item2", 2.000, 0);
 
@@ -205,6 +209,7 @@ TEST_CASE("Increasing or decreasing a quantity", "[Increasing/Decreasing]") {
 }
 
 TEST_CASE("Cloning", "[Clone]") {
+
 	Item item1(0, "item1", 2.000, 10);
 
     SECTION("Checking if the clone has the same private variables") {
@@ -218,6 +223,7 @@ TEST_CASE("Cloning", "[Clone]") {
 }
 
 TEST_CASE("Testing the stringify", "[toString]") {
+
 	Item item1(0, "item1", 2.000, 10);
 
     SECTION("Print item info") {
@@ -230,6 +236,11 @@ TEST_CASE("Testing the stringify", "[toString]") {
     }
 }
 
+/**
+	Writes to a file called test1.txt
+    @param none
+    @return none
+*/
 void testStore() {
     std::ofstream ofs;
     ofs.open ("test1.txt", std::ofstream::out);
@@ -241,6 +252,12 @@ void testStore() {
     ofs.close();
 }
 
+/**
+	Writes to a file called test1.txt
+    but empty inventory
+    @param none
+    @return none
+*/
 void emptyStore() {
     std::ofstream ofs;
     ofs.open ("test1.txt", std::ofstream::out);
@@ -249,6 +266,11 @@ void emptyStore() {
     ofs.close();
 }
 
+/**
+	Writes to a file called test2.txt
+    @param none
+    @return none
+*/
 void testStore2() {
     std::ofstream ofs;
     ofs.open ("test2.txt", std::ofstream::out);
@@ -262,9 +284,9 @@ void testStore2() {
 
 TEST_CASE("Creating the store", "[store]") {
 
-    testStore();
-    Store store("test1.txt");
-    REQUIRE(store.DisplayInventory() == "Paper: 2.00 - 20\nPencil: 1.00 - 30\nNotebook: 3.00 - 15\n");
+    testStore(); // reset the file
+    Store store("test1.txt"); // create the store
+    REQUIRE(store.DisplayInventory() == "Paper: 2.00 - 20\nPencil: 1.00 - 30\nNotebook: 3.00 - 15\n"); // check constructor by checking inventory
 
 }
 
@@ -273,13 +295,12 @@ TEST_CASE("Displaying the inventory", "[display]") {
     SECTION("Displaying an empty inventory") {
         emptyStore();
         Store store("test1.txt");
-        REQUIRE(store.DisplayInventory() == "");
-
+        REQUIRE(store.DisplayInventory() == ""); // check that the inventory is empty
     }
     SECTION("Displaying a non-empty inventory") {
         testStore();
         Store store("test1.txt");
-        REQUIRE(store.DisplayInventory() == "Paper: 2.00 - 20\nPencil: 1.00 - 30\nNotebook: 3.00 - 15\n");
+        REQUIRE(store.DisplayInventory() == "Paper: 2.00 - 20\nPencil: 1.00 - 30\nNotebook: 3.00 - 15\n"); // check display of inventory
 
     }
 }
@@ -290,13 +311,13 @@ TEST_CASE("Adding an item to the cart", "[adding]") {
     Store store("test1.txt");
 
     SECTION("Adding to an empty cart") {
-        store.AddItemToCart(1);
-        REQUIRE(store.DisplayCart() == "Paper: 2.00 - 1\n");
+        store.AddItemToCart(1); // add item to cart
+        REQUIRE(store.DisplayCart() == "Paper: 2.00 - 1\n"); // check contents of cart
     }
     SECTION("Adding to a cart with items already in it") {
-        store.AddItemToCart(1);
-        store.AddItemToCart(1);
-        REQUIRE(store.DisplayCart() == "Paper: 2.00 - 2\n");
+        store.AddItemToCart(1); // add item to cart
+        store.AddItemToCart(1); // add another item to cart
+        REQUIRE(store.DisplayCart() == "Paper: 2.00 - 2\n"); // check contents of cart
 
     }
 }
@@ -304,12 +325,12 @@ TEST_CASE("Adding an item to the cart", "[adding]") {
 TEST_CASE("Removing an item from the cart", "[removing]") {
 
     testStore();
-    Store store("test1.txt");
-    store.AddItemToCart(1);
-    store.AddItemToCart(2);
+    Store store("test1.txt"); // create a store
+    store.AddItemToCart(1); // add item to cart
+    store.AddItemToCart(2); // add item to cart
 
     SECTION("Removing an item from cart") {
-        store.RemoveItemFromCart(1);
+        store.RemoveItemFromCart(1); // remove item from cart
         REQUIRE(store.DisplayCart() == "Pencil: 1.00 - 1\n");
     }
     SECTION("Removing an item from cart with no items") {
@@ -326,11 +347,11 @@ TEST_CASE("Displaying the contents of the cart_", "[displaying]") {
     Store store("test2.txt");
 
     SECTION("Displaying an empty cart") {
-        REQUIRE(store.DisplayCart() == "");
+        REQUIRE(store.DisplayCart() == ""); // confirm empty cart
     }
     SECTION("Displaying a non-empty cart") {
         store.AddItemToCart(1);
-        REQUIRE(store.DisplayCart() == "Table: 20.00 - 1\n");
+        REQUIRE(store.DisplayCart() == "Table: 20.00 - 1\n"); // add item to cart and confirm contents
     }
 }
 
@@ -340,11 +361,11 @@ TEST_CASE("Checking out a cart", "[checking]") {
     Store store("test2.txt");
 
     SECTION("Checking out an empty cart") {
-        REQUIRE(store.Checkout() == 0.00);
+        REQUIRE(store.Checkout() == 0.00); // empty cart should be 0.00 total
     }
     SECTION("Checking out a non-empty cart") {
         store.AddItemToCart(1);
-        REQUIRE(store.Checkout() == 21.769);
+        REQUIRE(store.Checkout() == 21.769); // cart with a single table should be 21.769 total
     }
 }
 
@@ -355,12 +376,12 @@ TEST_CASE("Clearing a cart", "[clearing]") {
 
     SECTION("Clearing an empty cart") {
         store.ClearCart();
-        REQUIRE(store.DisplayCart() == "");
+        REQUIRE(store.DisplayCart() == ""); // clearing an empty cart should display an empty cart
     }
     SECTION("Clearing a non-empty cart") {
-        store.AddItemToCart(1);
+        store.AddItemToCart(1); // add item to cart
         store.ClearCart();
-        REQUIRE(store.DisplayCart() == "");
+        REQUIRE(store.DisplayCart() == ""); // clearing a cart should
     }
 }
 

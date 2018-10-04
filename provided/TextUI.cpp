@@ -8,7 +8,7 @@
 #include "Store.h"
 #include "TextUI.h"
 
-/** 
+/**
   Provided code for CSCI 3010, HW 2, Fall 2018
 */
 
@@ -21,6 +21,11 @@ TextUI::TextUI() {
   main_menu_.push_back("Leave");
 }
 
+/**
+	Displays the menu
+	@param none
+    @return string of the menu
+*/
 std::string TextUI::MainMenu() {
   int choice = -1;
   while (choice < 0 || choice >= main_menu_.size()) {
@@ -39,7 +44,11 @@ std::string TextUI::MainMenu() {
   return main_menu_[choice];
 }
 
-
+/**
+	Returns the user integer based on a given string choice
+	@param none
+    @return
+*/
 int TextUI::ItemMenu(Store s, std::map<int, std::string> items) {
   int choice = -1;
   while (items.find(choice) == items.end() && choice != 0) {
@@ -62,6 +71,11 @@ int TextUI::ItemMenu(Store s, std::map<int, std::string> items) {
   return choice;
 }
 
+/**
+	Routes the user menu based on a given string choice
+	@param string choice
+    @return none
+*/
 void TextUI::RouteChoice(Store s, std::string choice) {
   if (choice == "Display inventory") {
     std::cout << "Store inventory" << std::endl;
